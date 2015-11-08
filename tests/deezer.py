@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.common.alert import Alert
 from selenium.webdriver.support.ui import Select, WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import NoSuchElementException
@@ -43,3 +44,7 @@ class DeezerTest(unittest.TestCase):
                          'trackName' : 'Never Gonna Give You Up',
                          'url': 'http://www.deezer.com/album/7261054'}
                         , readResults(self.config))
+        self.driver.get("http://www.google.com")
+        time.sleep(1)
+        self.driver.switch_to_alert().accept()
+        time.sleep(1)
