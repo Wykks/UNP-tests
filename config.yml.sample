@@ -1,0 +1,9 @@
+firefox_profile: /home/stuff/.mozilla/firefox/s0rszxcl.default
+unpdir: /home/stuff/unp/
+websites:
+  deezer:
+    login: example@example.com
+    pass: passw0rd
+  spotify:
+    login: Someone
+    pass: passw0rd
