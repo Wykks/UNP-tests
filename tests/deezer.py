@@ -25,6 +25,7 @@ class DeezerTest(unittest.TestCase):
             self.driver.find_element_by_id("login_password").clear()
             self.driver.find_element_by_id("login_password").send_keys(self.config['websites']['deezer']['pass'])
             self.driver.find_element_by_id("login_form_submit").click()
+            time.sleep(5)
         except NoSuchElementException:
             pass
         self.driver.get("http://www.deezer.com/album/7261054")
