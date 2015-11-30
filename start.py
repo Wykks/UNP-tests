@@ -8,6 +8,7 @@ from utils import *
 from tests.deezer import DeezerTest
 from tests.eighttracks import EightTrackTest
 from tests.spotify import SpotifyTest
+from tests.beatport import BeatportTest
 
 def loadConfig():
     with open('config.yml', encoding='utf-8') as credsFile:
@@ -24,6 +25,7 @@ if __name__ == "__main__":
         suite.addTest(DeezerTest('test_deezer', driver, config))
         suite.addTest(EightTrackTest('test_8tracks', driver, config))
         suite.addTest(SpotifyTest('test_spotify', driver, config))
+        suite.addTest(BeatportTest('test_beatport', driver, config))
         unittest.TextTestRunner(verbosity=2).run(suite)
     finally:
         driver.quit()
