@@ -26,6 +26,7 @@ class SpotifyTest(unittest.TestCase):
             self.driver.find_element_by_id("login-pass").clear()
             self.driver.find_element_by_id("login-pass").send_keys(self.config['websites']['spotify']['pass'])
             self.driver.find_element_by_css_selector("#sp-login-form > div > button").click()
+            WebDriverWait(self.driver, 10).until(EC.visibility_of_element_located((By.CSS_SELECTOR, '#nav-profile')))
         except NoSuchElementException:
             pass
         self.driver.get("https://play.spotify.com/album/2mCuMNdJkoyiXFhsQCLLqw")
