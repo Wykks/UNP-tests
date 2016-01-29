@@ -9,6 +9,8 @@ Python >= 3.4 required (python 2.7.x may work).
 
 Python bindinds for Selenium: http://selenium-python.readthedocs.org/installation.html#downloading-python-bindings-for-selenium
 
+pyyaml (pip3 install pyyaml)
+
 It should works under Windows, but I wrote this (and use this) under Linux only.
 
 ### Configuration:
