@@ -32,10 +32,10 @@ class DeezerTest(unittest.TestCase):
         self.driver.get("http://www.deezer.com/album/7261054")
         self.assertEqual("Never Gonna Give You Up - The Rickrollerz", self.driver.title)
         try:
-            WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'a.picture-link')))
+            WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.CSS_SELECTOR, 'figure.picture-link')))
         except TimeoutException:
             self.fail()
-        self.driver.find_element_by_css_selector("a.picture-link").click()
+        self.driver.find_element_by_css_selector("figure.picture-link").click()
         time.sleep(10)
         self.assertEqual({'albumName': NO_INFO_STRING,
                          'artistName': 'The Rickrollerz',
