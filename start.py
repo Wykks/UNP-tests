@@ -11,6 +11,7 @@ from tests.spotify import SpotifyTest
 from tests.beatport import BeatportTest
 from tests.youtube import YoutubeTest
 from tests.youtubetv import YoutubeTvTest
+from tests.soundcloud import SoundcloudTest
 
 def loadConfig():
     with open('config.yml', encoding='utf-8') as credsFile:
@@ -30,6 +31,7 @@ if __name__ == "__main__":
         suite.addTest(BeatportTest('test_beatport', driver, config))
         suite.addTest(YoutubeTest('test_youtube', driver, config))
         suite.addTest(YoutubeTvTest('test_youtubetv', driver, config))
+        suite.addTest(SoundcloudTest('test_soundcloud', driver, config))
         unittest.TextTestRunner(verbosity=2).run(suite)
     finally:
         driver.quit()
