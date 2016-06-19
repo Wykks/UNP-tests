@@ -1,23 +1,17 @@
 # UNP-tests
-Functional tests for Untamed-Now-Playing
+Tests for Untamed-Now-Playing
 
 How to
 --------------------------------------
 
 ### Requirement:
-Python >= 3.4 required (python 2.7.x may work).
+NodeJS 4.x or higher.
 
-Python bindinds for Selenium: http://selenium-python.readthedocs.org/installation.html#downloading-python-bindings-for-selenium
-
-pyyaml (pip3 install pyyaml)
+    npm install mocha -g
+    npm install
 
 It should works under Windows, but I wrote this (and use this) under Linux only.
 
-### Configuration:
-Rename `config.yml.sample` to `config.yml` and fill it with your informations (I may consider some kind of encryption in the future, I don't really like having all my password in one raw file).
-
-UNP must be installed on the specified Firefox profile and must be configured to "Multiple txt files".
-
 ### Run:
 
-    python3 start.py
+    mocha
