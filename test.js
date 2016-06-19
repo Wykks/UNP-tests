@@ -6,10 +6,12 @@ const fs = require('fs');
 const tests = fs.readdirSync('./tests');
 
 describe('UNP Tests', function() {
-    this.timeout(20000);
+    this.timeout(15000);
 
-    beforeEach(function () {
-        global.nightmare = Nightmare({ show: false });
+    beforeEach(function() {
+        global.nightmare = Nightmare({
+            show: false
+        });
     });
 
     tests.forEach((test) => {
@@ -17,6 +19,6 @@ describe('UNP Tests', function() {
     });
 
     afterEach(function*() {
-      yield global.nightmare.end();
+        yield global.nightmare.end();
     });
 });
