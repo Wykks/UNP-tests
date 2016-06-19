@@ -4,8 +4,8 @@ var options = {
     test: 'test'
 };
 
-function inject(website) {
-    return global.nightmare
+function* prepare(website) {
+    yield global.nightmare
         .inject('js', './Untamed-Now-Playing-Next/data/third-party/jquery-2.1.3.min.js')
         .evaluate(() => {
             window.UNPBrowserFunc = class {
@@ -25,7 +25,17 @@ function inject(website) {
         .inject('js', `./Untamed-Now-Playing-Next/data/common/websites-support/websites/${website}.js`)
 }
 
-exports.inject = inject;
+function* finalize() {
+    yield global.nightmare.wait(() => {
+        return $(document).data('UNP') !== undefined;
+    });
+    return global.nightmare.evaluate(() => {
+        return $(document).data('UNP');
+    });
+}
+
+exports.prepare = prepare;
+exports.finalize = finalize;
 exports.options = options;
 exports.chai = chai;
 exports.expect = chai.expect;
