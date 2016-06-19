@@ -1,4 +1,4 @@
-require('mocha-generators').install()
+require('co-mocha');
 
 const Nightmare = require('nightmare');
 const fs = require('fs');
