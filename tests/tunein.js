@@ -3,7 +3,7 @@ var prepare = common.prepare;
 var finalize = common.finalize;
 var expect = common.expect;
 
-it.only('tunein', function*() {
+it('tunein', function*() {
     yield global.nightmare.goto('http://tunein.com/radio/Cherry-Radio-s189943/');
     yield prepare('tunein');
     var data = yield finalize();
