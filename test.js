@@ -6,7 +6,7 @@ const fs = require('fs');
 const tests = fs.readdirSync('./tests');
 
 describe('UNP Tests', function() {
-    this.timeout(15000);
+    this.timeout(20000);
 
     beforeEach(function() {
         global.nightmare = Nightmare({

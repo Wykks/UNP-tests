@@ -3,7 +3,7 @@ var prepare = common.prepare;
 var finalize = common.finalize;
 var expect = common.expect;
 
-it.only('soundcloud', function*() {
+it('soundcloud', function*() {
     yield global.nightmare.goto('https://soundcloud.com/nils-official/rick-astley-feat-avicii-never');
     yield prepare('soundcloud');
     var data = yield finalize();
