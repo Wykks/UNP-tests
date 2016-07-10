@@ -8,9 +8,15 @@ const tests = fs.readdirSync('./tests');
 describe('UNP Tests', function() {
     this.timeout(20000);
 
-    beforeEach(function() {
+    beforeEach(() => {
         global.nightmare = Nightmare({
-            show: false
+            show: false,
+            webPreferences: {
+                plugins: true,
+            },
+            switches: {
+                'ppapi-flash-path': '/opt/google/chrome/PepperFlash/libpepflashplayer.so'
+            }
         });
     });
 
