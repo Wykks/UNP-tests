@@ -1,4 +1,8 @@
-websites:
-  spotify:
-    login: "Someone"
-    pass: "passw0rd"
+{
+  "websites": {
+    "spotify": {
+      "login": "Someone",
+      "pass": "passw0rd"
+    }
+  }
+}
