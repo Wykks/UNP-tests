@@ -1,8 +1,6 @@
 var chai = require("chai");
 
-var options = {
-    test: 'test'
-};
+var options = require('./config.json');
 
 function* prepare(website) {
     yield global.nightmare
