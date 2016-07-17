@@ -3,7 +3,7 @@ var prepare = common.prepare;
 var finalize = common.finalize;
 var expect = common.expect;
 
-it.only('loopmasters', function*() {
+it('loopmasters', function*() {
     yield global.nightmare.goto('http://www.loopmasters.com/genres/66-Tech-House/products/5108-Modern-Tech-House-Vol-II');
     yield prepare('loopmasters');
     yield global.nightmare.click('.demoloops-content > .demoloop:first-child');
