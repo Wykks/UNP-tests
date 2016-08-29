@@ -4,7 +4,7 @@ var options = require('./config.json');
 
 function* prepare(website) {
     yield global.nightmare
-        .inject('js', './Untamed-Now-Playing-Next/data/third-party/jquery-2.1.3.min.js')
+        .inject('js', './Untamed-Now-Playing-Next/data/third-party/jquery-3.1.0.min.js')
         .evaluate(() => {
             window.UNPBrowserFunc = class {
                 static updateNowPlaying(data) {
